@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 void main(List<String> args) {
   runApp(const MaterialApp(
@@ -86,20 +85,21 @@ class WelcomeScreenState extends State<WelcomeScreen>
               opacity: _titleOpacity,
               child: Text(
                 'PETSAVE',
-                style: GoogleFonts.roboto(
-                  textStyle: const TextStyle(
-                      fontSize: 50,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.cyan),
-                ),
+                style: TextStyle(
+                    fontSize: 40,
+                    color: Colors.greenAccent.shade400,
+                    fontFamily: 'Pacifico'),
               ),
             ),
             // Subtítulo
             FadeTransition(
               opacity: _subtitleOpacity,
-              child: const Text(
+              child: Text(
                 'El reciclaje es el camino al cielo',
-                style: TextStyle(fontSize: 18),
+                style: TextStyle(
+                    fontSize: 25,
+                    color: Colors.green.shade600,
+                    fontFamily: 'DancingScript'),
               ),
             ),
           ],
