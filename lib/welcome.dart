@@ -87,9 +87,11 @@ class WelcomeScreenState extends State<WelcomeScreen>
               child: Text(
                 'PETSAVE',
                 style: GoogleFonts.roboto(
-                    textStyle: const TextStyle(
-                        fontSize: 50, fontWeight: FontWeight.bold),
-                    color: Colors.cyan),
+                  textStyle: const TextStyle(
+                      fontSize: 50,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.cyan),
+                ),
               ),
             ),
             // Subtítulo
