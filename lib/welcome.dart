@@ -1,4 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+void main(List<String> args) {
+  runApp(const MaterialApp(
+    home: WelcomeScreen(),
+  ));
+}
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -70,25 +77,27 @@ class WelcomeScreenState extends State<WelcomeScreen>
             // Logo
             FadeTransition(
               opacity: _logoOpacity,
-              child: Image.asset(
-                'assets/images/logo.png',
-                width: 200,
+              child: const FlutterLogo(
+                size: 200,
               ),
             ),
             // Título
             FadeTransition(
               opacity: _titleOpacity,
-              child: const Text(
-                'Bienvenido',
-                style: TextStyle(fontSize: 24),
+              child: Text(
+                'PETSAVE',
+                style: GoogleFonts.roboto(
+                    textStyle: const TextStyle(
+                        fontSize: 50, fontWeight: FontWeight.bold),
+                    color: Colors.cyan),
               ),
             ),
             // Subtítulo
             FadeTransition(
               opacity: _subtitleOpacity,
               child: const Text(
-                'A nuestra aplicación',
-                style: TextStyle(fontSize: 16),
+                'El reciclaje es el camino al cielo',
+                style: TextStyle(fontSize: 18),
               ),
             ),
           ],
