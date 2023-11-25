@@ -77,7 +77,7 @@ class WelcomeScreenState extends State<WelcomeScreen>
             FadeTransition(
               opacity: _logoOpacity,
               child: const FlutterLogo(
-                size: 150,
+                size: 200,
               ),
             ),
             // Título
@@ -86,8 +86,8 @@ class WelcomeScreenState extends State<WelcomeScreen>
               child: Text(
                 'PETSAVE',
                 style: TextStyle(
-                    fontSize: 45,
-                    color: Colors.green.shade300,
+                    fontSize: 40,
+                    color: Colors.greenAccent.shade400,
                     fontFamily: 'Pacifico'),
               ),
             ),
@@ -95,7 +95,7 @@ class WelcomeScreenState extends State<WelcomeScreen>
             FadeTransition(
               opacity: _subtitleOpacity,
               child: Text(
-                'Salva a un arbol con una botella',
+                'El reciclaje es el camino al cielo',
                 style: TextStyle(
                     fontSize: 25,
                     color: Colors.green.shade600,
