@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Textoslargos.dart';
 
 void main(List<String> args) {
   runApp(const MaterialApp(
@@ -14,13 +15,23 @@ class InterfazPrincipal extends StatefulWidget {
 }
 
 class _EstadoInterfaz extends State<InterfazPrincipal> {
+  // controladores para capturar las entradas del TextField
   final TextEditingController _textController = TextEditingController();
 
+  // Variables golbales futuras, para poder definirlas en otro momento
+  late Container contenedor1;
+  late Container contenedor2;
+  late Container contenedor3;
+  late Container contenedorTitulo;
   late int _valorIngresado;
   late String mensaje;
-  late String tip1;
-  late String tip2;
-  late String tip3;
+  late String _tip1 =
+      "Hola amigo te interizaria aprender mas sobrer el reciclaje?";
+  late String tip2 = "Ingres primero registra tu primer reciclaje";
+  late String tip3 =
+      "Y podras ver todo lo que puedes hacer para cambiar al mundo";
+
+  // Widgets de texto para modificarlos en tiempo de ejecucion
 
   int _contador = 0;
 
@@ -39,31 +50,18 @@ class _EstadoInterfaz extends State<InterfazPrincipal> {
     }
   }
 
-  _modificarTips() {
+  void _modificarTips() {
     _contador += _valorIngresado;
-    print('Contador: $_contador');
-    print('Tip1: $tip1');
-    if (_contador > 3) {
+    if (_contador >= 3) {
       setState(() {
-        tip1 =
-            "Para reciclar botellas en casa primero vacialas y limpialas enjuagándolas con agua y unas gotitas de detergente. Después fijate en su etiqueta o en el envase mismo si pueden reciclarse en los contenedores de reciclado de plástico. Si no pueden reciclarse, usalas para hacer manualidades u objetos de decoración para el hogar, o aprovechá para participar en iniciativas locales, como la campaña “Los Plásticos Ala Botella”, la cual incentiva a reciclar plástico de un solo uso dentro de botellas";
+        _tip1 = regresarTexto1tip1();
       });
-      tip2 = """¿Cómo hacer un lapicero con una botella de plástico?
-Para hacer un lapicero cortá al medio una botella que no uses. Cubrí la parte superior con cinta blanca para no cortarte y decorala. Podés cubrirla con fotos, papel de revista, pintarla, decorarla con goma Eva, ponerle cuerdas alrededor o, si la botella tiene un lindo diseño, usarla como tal. Además, atrevete a jugar con la terminación de los bordes para hacer diseños creativos y originales.""";
-      tip3 =
-          "¿Qué se puede hacer reciclando botellas de plástico?\n Con las botellas de plástico que no pueden llevarse a centros de reciclaje podés confeccionar manualidades que van desde macetas, posavasos, cortinas, floreros y lámparas hasta árboles de navidad, organizadores y comederos para los pájaros. El plástico es un material muy versátil y duradero por lo cual permite que se lo pueda reutilizar para hacer infinidades de objetos.";
     }
-  }
-
-  _mensajeDefault() {
-    tip1 = "Hola amigo te interizaria aprender mas sobrer el reciclaje?";
-    tip2 = "Ingres primero registra tu primer reciclaje";
-    tip3 = "Y podras ver todo lo que puedes hacer para cambiar al mundo";
   }
 
   @override
   Widget build(BuildContext context) {
-    _mensajeDefault();
+    //_mensajeDefault();
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.green.shade100,
@@ -76,7 +74,10 @@ Para hacer un lapicero cortá al medio una botella que no uses. Cubrí la parte 
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            Image.asset('lib/imagenes/PlanetitaCute.png'),
+            Padding(
+              padding: const EdgeInsets.all(50),
+              child: Image.asset('lib/imagenes/PlanetitaCute.png'),
+            ),
             Stack(
               children: [
                 Container(
@@ -103,15 +104,35 @@ Para hacer un lapicero cortá al medio una botella que no uses. Cubrí la parte 
                       // Convert the text input to an integer
                       int bottlesRecycled = int.parse(textInput);
                       setValorIngresado(bottlesRecycled);
-
                       _modificarTips();
+                      setState(() {});
                     },
                   ),
                 ),
               ],
             ),
-            Container(
-              key: const ValueKey('contenedor1'),
+            contenedorTitulo = Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.lightGreen,
+                  border:
+                      Border.all(width: 2, color: Colors.lightGreen.shade100)),
+              margin: const EdgeInsets.all(25),
+              width: double.infinity,
+              child: const Padding(
+                padding: EdgeInsets.all(20),
+                child: Text(
+                  'Tips de reciclaje',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: 'Roboto',
+                    fontSize: 20,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            contenedor1 = Container(
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   color: Colors.lightGreen,
@@ -122,16 +143,17 @@ Para hacer un lapicero cortá al medio una botella que no uses. Cubrí la parte 
               child: Padding(
                 padding: const EdgeInsets.all(20),
                 child: Text(
-                  tip1,
+                  _tip1,
                   style: TextStyle(
-                    color: Colors.lightBlueAccent.shade100,
+                    color: Colors.cyan.shade100,
                     fontFamily: 'Roboto',
-                    fontSize: 25,
+                    fontSize: 16,
                   ),
+                  textAlign: TextAlign.justify,
                 ),
               ),
             ),
-            Container(
+            contenedor2 = Container(
               key: const ValueKey('contenedor2'),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
@@ -152,7 +174,7 @@ Para hacer un lapicero cortá al medio una botella que no uses. Cubrí la parte 
                 ),
               ),
             ),
-            Container(
+            contenedor3 = Container(
               key: const ValueKey('contenedor3'),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
