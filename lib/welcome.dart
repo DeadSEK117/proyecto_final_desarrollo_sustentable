@@ -76,12 +76,10 @@ class WelcomeScreenState extends State<WelcomeScreen>
             // Logo
             FadeTransition(
               opacity: _logoOpacity,
-              child: const FlutterLogo(
-                size: 200,
-              ),
+              child: Image.asset('lib/imagenes/logoTexto.png'),
             ),
             // Título
-            FadeTransition(
+            /*FadeTransition(
               opacity: _titleOpacity,
               child: Text(
                 'PETSAVE',
@@ -90,16 +88,18 @@ class WelcomeScreenState extends State<WelcomeScreen>
                     color: Colors.greenAccent.shade400,
                     fontFamily: 'Pacifico'),
               ),
-            ),
+            ),*/
             // Subtítulo
             FadeTransition(
               opacity: _subtitleOpacity,
               child: Text(
-                'El reciclaje es el camino al cielo',
+                'Salva un arbol con una botella',
                 style: TextStyle(
-                    fontSize: 25,
+                    fontSize: 40,
                     color: Colors.green.shade600,
-                    fontFamily: 'DancingScript'),
+                    fontFamily: 'DancingScript',
+                    fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
               ),
             ),
           ],

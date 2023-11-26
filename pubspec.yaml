@@ -18,6 +18,11 @@ dev_dependencies:
   flutter_lints: ^3.0.1
 
 flutter:
+  assets:
+    - lib/imagenes/logoTexto.png
+    - lib/imagenes/PlanetitaCute.png
+    - lib/iconos/done_FILL0_wght400_GRAD0_opsz24.png
+    - lib/iconos/done_FILL0_wght400_GRAD0_opsz24.svg
   fonts:
     - family: Pacifico
       fonts:
@@ -25,3 +30,6 @@ flutter:
     - family: DancingScript
       fonts:
         - asset: lib/fonts/DancingScript-VariableFont_wght.ttf
+    - family: Roboto
+      fonts:
+        - asset: lib/fonts/Roboto-Regular.ttf
