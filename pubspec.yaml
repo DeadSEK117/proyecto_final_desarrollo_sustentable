@@ -11,6 +11,8 @@ dependencies:
     sdk: flutter
   google_fonts: ^6.1.0
   cupertino_icons: ^1.0.2
+  flutter_screenutil: ^5.0.0
+  splash_screen: ^3.3.2
 
 dev_dependencies:
   flutter_test:
