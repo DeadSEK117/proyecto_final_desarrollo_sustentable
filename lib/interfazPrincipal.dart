@@ -3,7 +3,11 @@ import 'Textoslargos.dart';
 import 'contenedores.dart';
 
 void main(List<String> args) {
-  runApp(const MaterialApp(
+  runApp(MaterialApp(
+    theme: ThemeData(
+      primaryColor: Colors.green.shade100,
+      hintColor: Colors.greenAccent.shade100,
+    ),
     home: InterfazPrincipal(),
   ));
 }
