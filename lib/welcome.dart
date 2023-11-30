@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
+/*
 void main(List<String> args) {
   runApp(const MaterialApp(
     home: WelcomeScreen(),
   ));
 }
+*/
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Textoslargos.dart';
+import 'contenedores.dart';
 
 void main(List<String> args) {
   runApp(const MaterialApp(
@@ -66,7 +67,7 @@ class _EstadoInterfaz extends State<InterfazPrincipal> {
       appBar: AppBar(
         backgroundColor: Colors.green.shade100,
         title: const Text(
-          'Se honesto',
+          'Se honesto contigo mismo',
           style: TextStyle(color: Colors.white),
           textAlign: TextAlign.center,
         ),
@@ -81,11 +82,11 @@ class _EstadoInterfaz extends State<InterfazPrincipal> {
             Stack(
               children: [
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 20),
+                  margin: const EdgeInsets.symmetric(horizontal: 20),
                   child: TextField(
                     controller: _textController,
                     decoration: InputDecoration(
-                        border: OutlineInputBorder(),
+                        border: const OutlineInputBorder(),
                         labelText: 'Botellas resicladas',
                         labelStyle: TextStyle(
                             color: Colors.greenAccent.shade200,
@@ -111,27 +112,7 @@ class _EstadoInterfaz extends State<InterfazPrincipal> {
                 ),
               ],
             ),
-            contenedorTitulo = Container(
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.lightGreen,
-                  border:
-                      Border.all(width: 2, color: Colors.lightGreen.shade100)),
-              margin: const EdgeInsets.all(25),
-              width: double.infinity,
-              child: const Padding(
-                padding: EdgeInsets.all(20),
-                child: Text(
-                  'Tips de reciclaje',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontFamily: 'Roboto',
-                    fontSize: 20,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            ),
+            titulo,
             contenedor1 = Container(
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
